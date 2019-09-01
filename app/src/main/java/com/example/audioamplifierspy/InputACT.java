@@ -19,7 +19,7 @@ public class InputACT extends AppCompatActivity {
 
         SharedPreferences preferences = getSharedPreferences("sharedPref", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        //remember to cha ge false to true
+        //remember to change false to true
         editor.putBoolean("entered", false);
         editor.apply();
 

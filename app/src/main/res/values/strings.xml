@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Audio Amplifier Spy</string>
-    <string name="audio_manager">Audio Manager</string>
+    <string name="app_name">Audio Amplifier</string>
+    <string name="audio_manager">Audio Amplifier</string>
 </resources>
