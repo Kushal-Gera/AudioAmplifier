@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrayDark"
+    android:orientation="vertical">
+
+    <TextView
+        android:textColor="#cccccc"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:text="Enter You Number. !!!\n DO NOT enter clients number.\nRemember it becuase it is the tracking ID."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/number"
+        android:inputType="phone"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="#cccccc"
+        android:layout_marginTop="150dp"
+        android:textSize="22sp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:hint="This is Your Tracking ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_bg"
+        android:foreground="@drawable/done" />
+
+
+</LinearLayout>
