@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorGrayDark"
     android:orientation="vertical">
 
     <TextView
+        android:layout_marginTop="20dp"
         android:textColor="#cccccc"
         android:gravity="center"
         android:textSize="22sp"
-        android:text="Enter You Number. !!!\n DO NOT enter clients number.\nRemember it becuase it is the tracking ID."
+        android:text="@string/warning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -23,17 +25,33 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="30dp"
-        android:hint="This is Your Tracking ID"
+        android:hint="This will be Your Tracking ID"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/password"
+        android:inputType="textPassword"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="#cccccc"
+        android:textSize="22sp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:hint="This will be Your password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/save"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:background="@drawable/btn_bg"
-        android:foreground="@drawable/done" />
+        android:text="@string/ok"
+        android:textSize="22sp"
+        android:background="@drawable/btn_bg"/>
 
 
 </LinearLayout>
