@@ -1,10 +1,13 @@
 package com.example.audioamplifierspy;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Toast;
@@ -39,9 +42,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.imageView).setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                  if (!entered_till){
+                  if (!entered_till)
                       startActivity(new Intent(MainActivity.this, InputACT.class));
-                  }
                   return true;
             }
         });
@@ -65,28 +67,34 @@ public class MainActivity extends AppCompatActivity {
         SeekBar sb2 = findViewById(R.id.seekBar2);
         SeekBar sb3 = findViewById(R.id.seekBar3);
 
-        sb.setProgress(76);
-        sb2.setProgress(83);
-        sb3.setProgress(50);
+        final AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        final int MAX = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+
+        sb.setMax(MAX);
+        sb.setProgress(11);
+
+        sb2.setMax(MAX);
+        sb2.setProgress(12);
+
+        sb3.setMax(MAX);
+        sb3.setProgress(7);
 
         SeekBar.OnSeekBarChangeListener listener = new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (progress == 100){
-                    Toast.makeText(MainActivity.this, "Volume Has Been Set To its Max Value", Toast.LENGTH_SHORT).show();
-                    Snackbar.make(seekBar, "Turn Device Volume To Full To See Difference", Snackbar.LENGTH_INDEFINITE).show();
+                audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress, 0);
+
+                if (progress == MAX){
+                    Snackbar.make(seekBar, "Device Volume Turned To 100%", Snackbar.LENGTH_INDEFINITE).show();
                 }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
 
             }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+            public void onStartTrackingTouch(SeekBar seekBar) { }
 
-            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) { }
         };
 
         sb.setOnSeekBarChangeListener(listener);

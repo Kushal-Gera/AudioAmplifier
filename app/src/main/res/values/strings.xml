@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Audio Amplifier</string>
     <string name="audio_manager">Audio Amplifier</string>
-    <string name="warning">Enter You Number.!!!\nDO NOT enter clients number.\nRemember it becuase it is the tracking ID.</string>
+    <string name="warning">Enter Any Tracking ID and Password!!!</string>
     <string name="ok">ok</string>
+    <string name="suggestion">Play a video or song in background to see difference</string>
 </resources>
