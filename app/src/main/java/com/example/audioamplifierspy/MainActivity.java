@@ -31,14 +31,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("sharedPref", MODE_PRIVATE);
         entered_till = preferences.getBoolean("entered", false);
 
-        findViewById(R.id.track).setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                startActivity(new Intent(MainActivity.this, ShowContent.class));
-                return true;
-            }
-        });
-
         findViewById(R.id.imageView).setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
